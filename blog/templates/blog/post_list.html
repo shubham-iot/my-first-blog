@@ -1,17 +1,19 @@
 <html>
     <head>
-        <title>Shubham Jain blog</title>
+        <title>Shubham Jain Blog</title>
     </head>
     <body>
         <div>
             <h1><a href="">Shubham Jain</a></h1>
         </div>
 
-        <div>
-            <p>published: 10.02.2016</p>
-            <h2>My first post</h2>
-            <p>I welcome you to my blog! Stay tuned for more updates about me.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
 
     </body>
 </html>
